@@ -1,0 +1,1844 @@
+/* ===================== Base ===================== */
+:root {
+  --gold: #c9a227;
+  --gold-bright: #e6c554;
+  --ink: #0d0b0e;
+  --parchment: #e9e2d0;
+}
+
+body {
+  background-color: var(--ink);
+  color: var(--parchment);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+/* ===================== Navbar ===================== */
+.hero-nav {
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Scrolled state: translucent dark background + blur */
+.hero-nav.scrolled {
+  background: rgba(13, 11, 14, 0.45);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(201, 162, 39, 0.15);
+}
+
+.hero-nav .navbar-brand {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: var(--parchment);
+}
+
+.hero-nav .nav-link {
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(233, 226, 208, 0.7);
+}
+
+.hero-nav .nav-link:hover,
+.hero-nav .nav-link:focus {
+  color: var(--gold-bright);
+}
+
+/* Collapsible menu on mobile: solid backdrop so links stay readable */
+@media (max-width: 991.98px) {
+  .hero-nav .navbar-collapse {
+    background: rgba(13, 11, 14, 0.95);
+    border: 1px solid rgba(201, 162, 39, 0.2);
+    border-radius: 0.5rem;
+    margin-top: 0.75rem;
+    padding: 1rem;
+  }
+}
+
+/* ===================== Buttons ===================== */
+.btn-gold {
+  --bs-btn-color: var(--ink);
+  --bs-btn-bg: var(--gold);
+  --bs-btn-border-color: var(--gold);
+  --bs-btn-hover-color: var(--ink);
+  --bs-btn-hover-bg: var(--gold-bright);
+  --bs-btn-hover-border-color: var(--gold-bright);
+  --bs-btn-active-color: var(--ink);
+  --bs-btn-active-bg: var(--gold-bright);
+  --bs-btn-active-border-color: var(--gold-bright);
+  --bs-btn-focus-shadow-rgb: 201, 162, 39;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  padding-top: 0.7em;
+  padding-bottom: 0.7em;
+}
+
+.btn-outline-light {
+  --bs-btn-font-family: 'Cinzel', serif;
+  --bs-btn-letter-spacing: 0.1em;
+  --bs-btn-font-size: 0.85rem;
+}
+
+/* ===================== Hero ===================== */
+.hero {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 9rem 0 5rem;
+}
+
+/* Hero image — slightly blurred and darkened.
+   The -40px inset gives the blur room so no soft edges appear. */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: -40px;
+  background: url('../keep-images/hero-laboratory.jpg') center / cover no-repeat;
+  filter: blur(6px) brightness(0.72);
+}
+
+/* Dark gradient overlay for readability */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(13, 11, 14, 0.75) 0%,
+    rgba(13, 11, 14, 0.4) 45%,
+    rgba(13, 11, 14, 0.92) 100%
+  );
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.hero-title {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: clamp(2.25rem, 8vw, 5rem);
+  letter-spacing: 0.1em;
+  line-height: 1;
+  color: #fff;
+  text-shadow: 0 0 60px rgba(201, 162, 39, 0.45);
+}
+
+/* Smaller title on large screens so it fits the left column */
+@media (min-width: 992px) {
+  .hero-title {
+    font-size: clamp(2.75rem, 4vw, 3.5rem);
+  }
+}
+
+.hero-subtitle {
+  font-style: italic;
+  font-size: clamp(1.25rem, 3vw, 1.9rem);
+  color: rgba(233, 226, 208, 0.9);
+}
+
+.hero-text {
+  max-width: 620px;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: rgba(233, 226, 208, 0.8);
+}
+
+.hero-date {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(233, 226, 208, 0.55);
+}
+
+/* ===================== Hero — right-side image ===================== */
+.hero-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image-placeholder {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem;
+  border: 1px dashed rgba(201, 162, 39, 0.45);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.hero-image-placeholder span {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(233, 226, 208, 0.45);
+}
+
+/* Sticker image: show the whole picture (never crop it) and cast a soft
+   shadow that follows the sticker's shape, even with a transparent PNG */
+.hero-visual img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.55));
+  animation: sticker-wiggle 4s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Slow wiggle: drifts left and right with a slight tilt */
+@keyframes sticker-wiggle {
+  0% {
+    transform: translateX(-12px) rotate(-2.5deg);
+  }
+  50% {
+    transform: translateX(12px) rotate(2.5deg);
+  }
+  100% {
+    transform: translateX(-12px) rotate(-2.5deg);
+  }
+}
+
+/* Don't animate for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero-visual img {
+    animation: none;
+  }
+}
+
+/* Stacked on small screens: image goes full width, landscape shape */
+@media (max-width: 991.98px) {
+  .hero-image-placeholder {
+    aspect-ratio: 16 / 10;
+  }
+}
+
+/* ===================== Landing sections (placeholders) ===================== */
+.landing-section {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 1.25rem;
+  /* keeps anchor jumps from hiding behind the fixed navbar */
+  scroll-margin-top: 4.5rem;
+  border-top: 1px solid rgba(201, 162, 39, 0.08);
+}
+
+.landing-section:nth-of-type(even) {
+  background-color: rgba(255, 255, 255, 0.025);
+}
+
+.section-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+
+.section-title {
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  font-size: clamp(1.6rem, 4vw, 2.75rem);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(233, 226, 208, 0.35);
+  position: relative;
+  padding-bottom: 1.25rem;
+  margin-bottom: 0;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 1px;
+  background: rgba(201, 162, 39, 0.4);
+}
+
+/* Shorter, tighter sections on small screens */
+@media (max-width: 767.98px) {
+  .landing-section {
+    min-height: 45vh;
+    padding: 3.5rem 1rem;
+  }
+}
+
+/* ===================== Story section ===================== */
+/* Story is a long-form chronicle: normal block flow instead of the
+   centered flex layout used by the remaining placeholder sections */
+.story-section {
+  display: block;
+  min-height: auto;
+}
+
+.story {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.story-chapter {
+  margin-top: 4.5rem;
+}
+
+/* Small gold ornament above every chapter title */
+.story-chapter::before {
+  content: '\2726';
+  display: block;
+  text-align: center;
+  font-size: 0.9rem;
+  color: rgba(201, 162, 39, 0.55);
+  margin-bottom: 0.9rem;
+}
+
+.story-chapter-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.story-chapter-label::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 1px;
+  background: rgba(201, 162, 39, 0.4);
+}
+
+.story-text {
+  font-size: 1.2rem;
+  line-height: 1.75;
+  color: rgba(233, 226, 208, 0.82);
+  margin-bottom: 1.25rem;
+}
+
+.story-text strong {
+  color: var(--parchment);
+  font-weight: 600;
+}
+
+/* Drop cap opens each chapter like a page from the Grimoire */
+.story-text--lead::first-letter {
+  font-family: 'Cinzel', serif;
+  font-size: 3.2em;
+  float: left;
+  line-height: 0.85;
+  padding-right: 0.12em;
+  padding-top: 0.06em;
+  color: var(--gold);
+}
+
+/* Short, dramatic lines shown one by one */
+.story-beats {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.story-beats p {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  letter-spacing: 0.08em;
+  color: var(--parchment);
+  margin: 0.55rem 0;
+  text-shadow: 0 0 28px rgba(201, 162, 39, 0.3);
+}
+
+/* Story illustration frame */
+.story-figure {
+  margin: 2.75rem 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  border: 1px solid rgba(201, 162, 39, 0.35);
+  background: rgba(13, 11, 14, 0.8);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), 0 0 35px rgba(201, 162, 39, 0.12);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.story-figure:hover {
+  border-color: rgba(201, 162, 39, 0.65);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.8), 0 0 45px rgba(201, 162, 39, 0.22);
+}
+
+.story-figure img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), filter 0.6s ease;
+}
+
+.story-figure:hover img {
+  transform: scale(1.025);
+  filter: brightness(1.06);
+}
+
+.story-figure span {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(233, 226, 208, 0.35);
+  padding: 3rem 1rem;
+  display: block;
+  text-align: center;
+}
+
+.story-figure--placeholder span {
+  display: grid;
+  place-content: center;
+  gap: 0.6rem;
+  min-height: 12rem;
+  aspect-ratio: 16 / 10;
+  padding: 2rem 1.25rem;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.05rem;
+  font-style: italic;
+  letter-spacing: 0;
+  text-transform: none;
+  color: rgba(233, 226, 208, 0.45);
+}
+
+.story-figure--placeholder span strong {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  font-style: normal;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: rgba(201, 162, 39, 0.7);
+}
+
+/* Empty frame waiting for a supplied illustration */
+.story-figure--placeholder {
+  border-style: dashed;
+  border-color: rgba(201, 162, 39, 0.28);
+  background:
+    repeating-linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.02) 0 10px,
+      transparent 10px 20px
+    ),
+    rgba(13, 11, 14, 0.55);
+  box-shadow: none;
+}
+
+.story-figure--placeholder:hover {
+  border-color: rgba(201, 162, 39, 0.5);
+  box-shadow: 0 0 30px rgba(201, 162, 39, 0.1);
+}
+
+/* Morgana's message */
+.story-quote {
+  margin: 2.5rem 0;
+  padding: 2rem 2.25rem;
+  border: 1px solid rgba(201, 162, 39, 0.22);
+  border-left: 3px solid var(--gold);
+  border-radius: 0.75rem;
+  background: rgba(201, 162, 39, 0.05);
+}
+
+.story-quote p {
+  font-style: italic;
+  font-size: clamp(1.2rem, 2.6vw, 1.5rem);
+  line-height: 1.7;
+  color: var(--parchment);
+  margin: 0;
+}
+
+/* Closing call to action */
+.story-finale {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.story-finale-line {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.1rem, 3vw, 1.6rem);
+  letter-spacing: 0.12em;
+  color: rgba(233, 226, 208, 0.85);
+  margin: 0.5rem 0;
+}
+
+.story-finale-line--accent {
+  color: var(--gold-bright);
+  text-shadow: 0 0 40px rgba(230, 197, 84, 0.4);
+}
+
+/* ===================== Scroll reveal (progressive enhancement) ===================== */
+/* Only hidden when JS is available (html.js set in <head>), so the story
+   stays fully readable if scripts are blocked */
+html.js .reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+html.js .reveal.revealed {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.js .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ===================== Trials section ===================== */
+.section-intro {
+  max-width: 640px;
+  margin: 1.5rem auto 0;
+  font-size: 1.15rem;
+  line-height: 1.6;
+  color: rgba(233, 226, 208, 0.7);
+}
+
+.trial-grid {
+  margin-top: 3.25rem;
+}
+
+.trial-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 2rem 1.75rem;
+  border: 1px solid rgba(201, 162, 39, 0.18);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.025);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* The available (clickable) trial glows softly to draw the eye */
+.trial-card:not(.is-locked):not(.is-complete) {
+  border-color: rgba(201, 162, 39, 0.45);
+  box-shadow: 0 0 0 1px rgba(201, 162, 39, 0.25), 0 14px 44px rgba(201, 162, 39, 0.1);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .trial-card:not(.is-locked):hover {
+    transform: translateY(-4px);
+  }
+}
+
+.trial-card.is-locked {
+  opacity: 0.6;
+}
+
+.trial-card.is-complete {
+  border-color: rgba(143, 191, 111, 0.4);
+}
+
+.trial-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.trial-number {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 1.9rem;
+  line-height: 1;
+  color: var(--gold);
+}
+
+.trial-status {
+  font-family: 'Cinzel', serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 0.4em 1em;
+  border-radius: 999px;
+  border: 1px solid rgba(201, 162, 39, 0.45);
+  background: rgba(201, 162, 39, 0.08);
+  color: var(--gold-bright);
+  white-space: nowrap;
+}
+
+.trial-card.is-locked .trial-status {
+  border-color: rgba(233, 226, 208, 0.2);
+  background: rgba(255, 255, 255, 0.03);
+  color: rgba(233, 226, 208, 0.5);
+}
+
+.trial-card.is-complete .trial-status {
+  border-color: rgba(143, 191, 111, 0.5);
+  background: rgba(143, 191, 111, 0.1);
+  color: #a9d38c;
+}
+
+.trial-title {
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  letter-spacing: 0.08em;
+  color: var(--parchment);
+  margin-bottom: 0.75rem;
+}
+
+.trial-text {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: rgba(233, 226, 208, 0.72);
+  margin-bottom: 1.5rem;
+}
+
+.trial-hint {
+  font-family: 'Cinzel', serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-align: center;
+  color: rgba(233, 226, 208, 0.45);
+  margin: 0.9rem 0 0;
+}
+
+.trial-card.is-complete .trial-hint {
+  color: rgba(169, 211, 140, 0.75);
+}
+
+/* Locked buttons must never look or feel clickable */
+.trial-card .btn.disabled,
+.trial-card .btn:disabled {
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+.trial-reset-btn {
+  font-family: 'Cinzel', serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(233, 226, 208, 0.4);
+  text-decoration: none;
+}
+
+.trial-reset-btn:hover,
+.trial-reset-btn:focus {
+  color: var(--gold-bright);
+  text-decoration: none;
+}
+
+/* ===================== Ingredients section ===================== */
+.ingredient-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 3rem;
+}
+
+/* Two balanced rows of five; tablets pair up, phones keep two per row */
+@media (max-width: 991.98px) {
+  .ingredient-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 359.98px) {
+  .ingredient-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.ingredient-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.4rem 1rem 1.5rem;
+  border: 1px solid rgba(201, 162, 39, 0.18);
+  border-radius: 1rem;
+  overflow: hidden;
+  background:
+    radial-gradient(120% 80% at 50% 0%, rgba(201, 162, 39, 0.07), transparent 60%),
+    rgba(255, 255, 255, 0.02);
+  translate: 0 0;
+  transition: border-color 0.35s ease, box-shadow 0.35s ease, translate 0.35s ease;
+}
+
+/* Staggered scroll-reveal: each tile arrives a beat after the previous one.
+   Only opacity/transform are delayed; hover effects stay snappy. */
+html.js .ingredient-card.reveal {
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease,
+    translate 0.35s ease;
+  transition-delay:
+    calc(var(--i, 0) * 70ms),
+    calc(var(--i, 0) * 70ms),
+    0s,
+    0s,
+    0s;
+}
+
+.ingredient-card-media {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  margin-bottom: 0.85rem;
+}
+
+/* Slow golden aura breathing behind the vial */
+.ingredient-card-media::before {
+  content: '';
+  position: absolute;
+  inset: 14%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 162, 39, 0.3), rgba(201, 162, 39, 0) 70%);
+  filter: blur(6px);
+  animation: ingredient-pulse 5.5s ease-in-out infinite;
+  animation-delay: calc(var(--i, 0) * -0.55s);
+}
+
+/* The vial itself drifts gently, every tile out of phase */
+.ingredient-float {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 78%;
+  max-width: 148px;
+  animation: ingredient-float 6.5s ease-in-out infinite;
+  animation-delay: calc(var(--i, 0) * -0.55s);
+  will-change: transform;
+}
+
+.ingredient-float img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.45));
+  transition: filter 0.35s ease;
+}
+
+/* A band of light sweeps across the tile on hover / keyboard focus */
+.ingredient-card::after {
+  content: '';
+  position: absolute;
+  inset: -60% -120%;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(230, 197, 84, 0.13) 50%,
+    transparent 60%
+  );
+  transform: translateX(-60%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 0.9s ease, opacity 0.5s ease;
+}
+
+.ingredient-card-index {
+  margin: 0 0 0.35rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.3em;
+  color: rgba(201, 162, 39, 0.75);
+}
+
+.ingredient-card-name {
+  margin: 0 0 0.5rem;
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  color: var(--parchment);
+}
+
+.ingredient-card-blurb {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.5;
+  color: rgba(233, 226, 208, 0.62);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .ingredient-card:hover,
+  .ingredient-card:focus-within {
+    translate: 0 -6px;
+  }
+}
+
+.ingredient-card:hover,
+.ingredient-card:focus-within {
+  border-color: rgba(201, 162, 39, 0.5);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(201, 162, 39, 0.22);
+}
+
+.ingredient-card:hover::after,
+.ingredient-card:focus-within::after {
+  transform: translateX(60%);
+  opacity: 1;
+}
+
+.ingredient-card:hover .ingredient-float img,
+.ingredient-card:focus-within .ingredient-float img {
+  filter: drop-shadow(0 16px 24px rgba(201, 162, 39, 0.3));
+}
+
+@keyframes ingredient-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-1.2deg);
+  }
+  50% {
+    transform: translateY(-9px) rotate(1.2deg);
+  }
+}
+
+@keyframes ingredient-pulse {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(0.92);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.06);
+  }
+}
+
+/* Reduced motion: still and quiet, but the layout and hover clarity remain */
+@media (prefers-reduced-motion: reduce) {
+  .ingredient-float,
+  .ingredient-card-media::before {
+    animation: none;
+  }
+
+  .ingredient-card {
+    translate: none;
+  }
+
+  .ingredient-card::after {
+    display: none;
+  }
+}
+
+/* ===================== Event details section ===================== */
+.detail-grid {
+  margin-top: 3.25rem;
+}
+
+.detail-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 2rem 1.75rem;
+  border: 1px solid rgba(201, 162, 39, 0.18);
+  border-radius: 1rem;
+  background:
+    radial-gradient(120% 90% at 50% 0%, rgba(201, 162, 39, 0.07), transparent 62%),
+    rgba(255, 255, 255, 0.02);
+  translate: 0 0;
+  transition: border-color 0.35s ease, box-shadow 0.35s ease, translate 0.35s ease;
+}
+
+/* `translate` is used instead of `transform` so it never fights the
+   scroll-reveal transform on the same element */
+@media (prefers-reduced-motion: no-preference) {
+  .detail-card:hover,
+  .detail-card:focus-within {
+    translate: 0 -4px;
+  }
+}
+
+.detail-card:hover,
+.detail-card:focus-within {
+  border-color: rgba(201, 162, 39, 0.5);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(201, 162, 39, 0.22);
+}
+
+.detail-title {
+  margin: 0 0 0.9rem;
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  font-size: 1.15rem;
+  letter-spacing: 0.04em;
+  color: var(--parchment);
+}
+
+.detail-text {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.65;
+  color: rgba(233, 226, 208, 0.7);
+}
+
+.detail-text strong {
+  font-weight: 600;
+  color: rgba(233, 226, 208, 0.92);
+}
+
+.detail-signature {
+  max-width: 620px;
+  margin: 2.75rem auto 0;
+  text-align: center;
+  font-size: 1.05rem;
+  font-style: italic;
+  color: rgba(233, 226, 208, 0.55);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .detail-card {
+    translate: none;
+  }
+}
+
+/* ===================== Trial page (Trial I — The Lost Ingredients) ========= */
+.trial-page {
+  min-height: 100vh;
+  min-height: 100svh;
+  padding: 8.5rem 0 5rem;
+}
+
+.trial-header {
+  margin-bottom: 1rem;
+}
+
+.trial-tagline {
+  font-style: italic;
+  font-size: clamp(1.05rem, 2.6vw, 1.35rem);
+  color: rgba(233, 226, 208, 0.75);
+  margin-bottom: 0;
+}
+
+.trial-panel {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 3rem 2.5rem;
+  border: 1px solid rgba(201, 162, 39, 0.22);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.trial-panel .section-label {
+  margin-bottom: 0.5rem;
+}
+
+.trial-panel-title {
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 4vw, 2.4rem);
+  letter-spacing: 0.1em;
+  color: var(--parchment);
+  text-shadow: 0 0 48px rgba(201, 162, 39, 0.35);
+  margin-bottom: 1.25rem;
+}
+
+.trial-panel-text {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: rgba(233, 226, 208, 0.8);
+  margin-bottom: 1rem;
+}
+
+.trial-panel-note {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(233, 226, 208, 0.45);
+  margin: 1.75rem 0 0;
+}
+
+/* Faint green light of the Grimoire */
+.story-quote--green {
+  border: 1px solid rgba(95, 191, 122, 0.25);
+  border-left: 3px solid #5fbf7a;
+  background: rgba(95, 191, 122, 0.06);
+}
+
+.story-quote--green p {
+  color: #cde9d3;
+}
+
+/* --------------------- Ingredient carousel --------------------- */
+.ingredient-intro {
+  color: rgba(233, 226, 208, 0.65);
+}
+
+.ingredient-carousel {
+  max-width: 680px;
+  margin: 2.25rem auto 0;
+}
+
+/* Keep carousel height stable while sliding between ingredients */
+.carousel-inner {
+  min-height: 420px;
+}
+
+@media (max-width: 767.98px) {
+  .carousel-inner {
+    min-height: 0;
+  }
+}
+
+.ingredient-carousel .carousel-indicators {
+  position: static;
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+}
+
+.ingredient-carousel .carousel-indicators [data-bs-target] {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  border: 1px solid rgba(201, 162, 39, 0.5);
+  background-color: transparent;
+  margin: 0 0.3rem;
+}
+
+.ingredient-carousel .carousel-indicators .active {
+  background-color: var(--gold);
+  border-color: var(--gold);
+}
+
+.ingredient-carousel .carousel-control-prev,
+.ingredient-carousel .carousel-control-next {
+  width: 3rem;
+  height: 3rem;
+  top: 32%;
+  opacity: 0.7;
+}
+
+.ingredient-carousel .carousel-control-prev:hover,
+.ingredient-carousel .carousel-control-next:hover {
+  opacity: 1;
+}
+
+.ingredient-slide {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: center;
+  text-align: center;
+  padding: 0.5rem 3.25rem 0.5rem;
+}
+
+@media (min-width: 576px) {
+  .ingredient-slide {
+    grid-template-columns: 240px 1fr;
+    text-align: left;
+    padding: 0.5rem 3.5rem;
+  }
+}
+
+/* Ingredient picture frame */
+.ingredient-media {
+  margin: 0;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(201, 162, 39, 0.35);
+  border-radius: 1rem;
+  background: rgba(13, 11, 14, 0.7);
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 20px rgba(201, 162, 39, 0.08);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.ingredient-media:hover {
+  border-color: rgba(201, 162, 39, 0.65);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7), 0 0 30px rgba(201, 162, 39, 0.2);
+}
+
+.ingredient-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.ingredient-media:hover img {
+  transform: scale(1.04);
+}
+
+.ingredient-media span {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(233, 226, 208, 0.35);
+}
+
+.ingredient-index {
+  font-family: 'Cinzel', serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.4rem;
+}
+
+.ingredient-name {
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  letter-spacing: 0.08em;
+  color: var(--parchment);
+  margin-bottom: 0.6rem;
+}
+
+.ingredient-blurb,
+.ingredient-flavor {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: rgba(233, 226, 208, 0.75);
+  margin-bottom: 1.1rem;
+}
+
+/* --------------------- Mission list --------------------- */
+.mission-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mission-list li {
+  position: relative;
+  padding-left: 1.9rem;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: rgba(233, 226, 208, 0.8);
+  margin-bottom: 1.1rem;
+}
+
+.mission-list li::before {
+  content: '\2726';
+  position: absolute;
+  left: 0;
+  top: 0.15em;
+  font-size: 0.9rem;
+  color: var(--gold);
+}
+
+.mission-list strong {
+  color: var(--parchment);
+  font-weight: 600;
+}
+
+/* --------------------- CTA + closing --------------------- */
+.trial-cta {
+  margin-top: 2.5rem;
+}
+
+.trial-closing {
+  font-style: italic;
+  font-size: 1.15rem;
+  color: rgba(233, 226, 208, 0.6);
+  margin: 3rem 0 0;
+}
+
+.trial-page-actions {
+  margin-top: 4rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(201, 162, 39, 0.12);
+}
+
+.trial-page-actions .trial-hint {
+  margin-top: 1.1rem;
+}
+
+/* --------------------- Ingredient modals --------------------- */
+.ingredient-modal {
+  border: 1px solid rgba(201, 162, 39, 0.28);
+  border-radius: 1rem;
+  background: #141117;
+  color: var(--parchment);
+}
+
+.ingredient-modal .modal-body {
+  padding: 2.25rem;
+}
+
+.ingredient-media--modal {
+  max-width: 220px;
+  margin: 0 auto 1.5rem;
+}
+
+.ingredient-modal .ingredient-index,
+.ingredient-modal .ingredient-name {
+  text-align: center;
+}
+
+.ingredient-facts {
+  margin: 1.5rem 0 0;
+  border-top: 1px solid rgba(201, 162, 39, 0.15);
+  padding-top: 1.25rem;
+}
+
+.ingredient-facts > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.45rem 0;
+  border-bottom: 1px solid rgba(201, 162, 39, 0.08);
+}
+
+.ingredient-facts dt {
+  font-family: 'Cinzel', serif;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(233, 226, 208, 0.5);
+}
+
+.ingredient-facts dd {
+  margin: 0;
+  text-align: right;
+  font-size: 1rem;
+  color: rgba(233, 226, 208, 0.85);
+}
+
+.ingredient-facts dd.is-lost {
+  color: #d9646f;
+  text-transform: uppercase;
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+}
+
+/* --------------------- The ten challenges --------------------- */
+.challenge-accordion {
+  margin-top: 2rem;
+}
+
+.challenge-accordion .accordion-item {
+  background: transparent;
+  border: 1px solid rgba(201, 162, 39, 0.18);
+  border-radius: 0.75rem;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.challenge-accordion .accordion-button {
+  background: transparent;
+  color: var(--parchment);
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.06em;
+  padding: 1.15rem 1.25rem;
+  gap: 0.9rem;
+  box-shadow: none;
+}
+
+.challenge-accordion .accordion-button:not(.collapsed) {
+  background: rgba(201, 162, 39, 0.06);
+  color: var(--gold-bright);
+  box-shadow: none;
+}
+
+.challenge-accordion .accordion-button:focus {
+  box-shadow: none;
+}
+
+.challenge-accordion .accordion-body {
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.challenge-num {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--gold);
+}
+
+.challenge-name {
+  font-size: 0.98rem;
+}
+
+.challenge-badge {
+  margin-left: auto;
+  font-size: 0.58rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(233, 226, 208, 0.5);
+  border: 1px solid rgba(233, 226, 208, 0.2);
+  padding: 0.4em 0.9em;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+@media (max-width: 575.98px) {
+  .challenge-badge {
+    display: none;
+  }
+}
+
+.challenge-desc {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: rgba(233, 226, 208, 0.72);
+  margin-bottom: 1.25rem;
+}
+
+.challenge-desc strong {
+  color: var(--parchment);
+}
+
+.challenge-desc code {
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 0.9em;
+  color: var(--gold-bright);
+  background: rgba(201, 162, 39, 0.1);
+  border: 1px solid rgba(201, 162, 39, 0.18);
+  border-radius: 0.35rem;
+  padding: 0.05em 0.4em;
+}
+
+.challenge-desc sup {
+  font-size: 0.7em;
+}
+
+.challenge-subhead {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 1.5rem 0 0.6rem;
+}
+
+.challenge-examples {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.5rem;
+}
+
+.challenge-examples li {
+  position: relative;
+  padding: 0.4rem 0 0.4rem 1.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(233, 226, 208, 0.75);
+  border-bottom: 1px dashed rgba(201, 162, 39, 0.1);
+}
+
+.challenge-examples li:last-child {
+  border-bottom: 0;
+}
+
+.challenge-examples li::before {
+  content: '\2726';
+  position: absolute;
+  left: 0;
+  top: 0.4rem;
+  font-size: 0.8rem;
+  color: var(--gold);
+}
+
+/* Highlighted "read me" callout inside a challenge */
+.challenge-notice {
+  margin: 1.5rem 0;
+  padding: 0.9rem 1.1rem;
+  border: 1px solid rgba(201, 162, 39, 0.35);
+  border-left: 3px solid var(--gold);
+  border-radius: 0.6rem;
+  background: rgba(201, 162, 39, 0.07);
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: rgba(233, 226, 208, 0.9);
+}
+
+.challenge-notice strong {
+  color: var(--gold-bright);
+}
+
+.challenge-notice code {
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 0.92em;
+  color: var(--gold-bright);
+  background: rgba(201, 162, 39, 0.12);
+  border: 1px solid rgba(201, 162, 39, 0.22);
+  border-radius: 0.35rem;
+  padding: 0.05em 0.4em;
+  white-space: nowrap;
+}
+
+/* --------------------- Code editor --------------------- */
+.code-editor {
+  border: 1px solid rgba(201, 162, 39, 0.25);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: #0b090d;
+}
+
+.code-editor-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.55rem 1rem;
+  border-bottom: 1px solid rgba(201, 162, 39, 0.15);
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.code-editor-area {
+  display: block;
+  width: 100%;
+  min-height: 210px;
+  padding: 1rem;
+  border: 0;
+  background: #0b090d;
+  color: var(--parchment);
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  resize: vertical;
+}
+
+.code-editor-area::placeholder {
+  color: rgba(233, 226, 208, 0.3);
+}
+
+.code-editor-area:focus {
+  outline: none;
+  box-shadow: inset 0 0 0 1px rgba(201, 162, 39, 0.4);
+}
+
+.code-editor-actions {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.8rem 1rem;
+  border-top: 1px solid rgba(201, 162, 39, 0.15);
+}
+
+.code-console {
+  min-height: 3.25rem;
+  max-height: 240px;
+  overflow-y: auto;
+  padding: 0.9rem 1rem;
+  border-top: 1px solid rgba(201, 162, 39, 0.15);
+  background: rgba(255, 255, 255, 0.02);
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: rgba(233, 226, 208, 0.7);
+  white-space: pre-wrap;
+}
+
+.code-console-empty {
+  color: rgba(233, 226, 208, 0.35);
+  font-style: italic;
+}
+
+/* Judge output lines */
+.code-console-line {
+  margin: 0 0 0.25rem;
+}
+
+.code-console-line:last-child {
+  margin-bottom: 0;
+}
+
+.code-console-line--log {
+  color: rgba(233, 226, 208, 0.85);
+}
+
+.code-console-line--info {
+  color: rgba(233, 226, 208, 0.7);
+}
+
+.code-console-line--warn {
+  color: var(--gold-bright);
+}
+
+.code-console-line--error {
+  color: #e07a84;
+}
+
+.code-console-line--success {
+  color: #a9d38c;
+}
+
+.code-console-line--muted {
+  color: rgba(233, 226, 208, 0.45);
+  font-style: italic;
+}
+
+.code-console-line--recovered {
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.08em;
+  color: var(--gold-bright);
+  text-shadow: 0 0 24px rgba(230, 197, 84, 0.45);
+  margin-top: 0.5rem;
+}
+
+/* Buttons are disabled while the archive judges a submission */
+.code-editor-actions .btn:disabled {
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+/* Recovered ingredient: challenge badge + modal status */
+.challenge-badge.is-recovered {
+  color: #a9d38c;
+  border-color: rgba(143, 191, 111, 0.5);
+  background: rgba(143, 191, 111, 0.1);
+}
+
+.ingredient-facts dd.is-recovered {
+  color: #a9d38c;
+  text-transform: uppercase;
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+}
+
+/* ===================== Trial II — The Potion Factory (build brief) ========= */
+.brief-hero {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 3.5rem;
+  padding: 3rem 2rem 2.75rem;
+  border: 1px solid rgba(201, 162, 39, 0.3);
+  border-radius: 1.25rem;
+  text-align: center;
+  background:
+    radial-gradient(95% 130% at 50% 0%, rgba(201, 162, 39, 0.14), transparent 62%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
+  box-shadow:
+    0 26px 70px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(201, 162, 39, 0.18);
+}
+
+/* A slow band of candlelight drifting across the brief */
+.brief-hero::after {
+  content: '';
+  position: absolute;
+  inset: -50% -30%;
+  background: linear-gradient(
+    100deg,
+    transparent 45%,
+    rgba(230, 197, 84, 0.07) 50%,
+    transparent 55%
+  );
+  animation: brief-sheen 9s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes brief-sheen {
+  0%,
+  100% {
+    transform: translateX(-35%);
+  }
+  50% {
+    transform: translateX(35%);
+  }
+}
+
+.brief-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+.brief-eyebrow {
+  margin: 0 0 1rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.brief-title {
+  margin: 0 0 1.25rem;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: clamp(1.75rem, 5vw, 2.7rem);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow: 0 0 50px rgba(201, 162, 39, 0.4);
+}
+
+.brief-lead {
+  max-width: 620px;
+  margin: 0 auto;
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: rgba(233, 226, 208, 0.8);
+}
+
+.brief-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  max-width: 620px;
+  margin: 1.9rem auto 0;
+  padding: 0;
+  list-style: none;
+}
+
+.brief-chip {
+  padding: 0.42rem 1rem;
+  border: 1px solid rgba(201, 162, 39, 0.35);
+  border-radius: 999px;
+  background: rgba(201, 162, 39, 0.07);
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(233, 226, 208, 0.85);
+}
+
+.brief-panel {
+  margin-top: 1.75rem;
+  padding: 2rem 1.85rem;
+  border: 1px solid rgba(201, 162, 39, 0.18);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.brief-panel-title {
+  margin: 0 0 1.25rem;
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.brief-text {
+  margin: 0 0 1rem;
+  font-size: 1.08rem;
+  line-height: 1.7;
+  color: rgba(233, 226, 208, 0.78);
+}
+
+.brief-text:last-child {
+  margin-bottom: 0;
+}
+
+.brief-text strong {
+  font-weight: 600;
+  color: var(--parchment);
+}
+
+.brief-text code {
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 0.9em;
+  color: var(--gold-bright);
+  background: rgba(201, 162, 39, 0.1);
+  border: 1px solid rgba(201, 162, 39, 0.18);
+  border-radius: 0.35rem;
+  padding: 0.05em 0.4em;
+}
+
+/* Numbered build steps, marked with roman numerals */
+.brief-steps {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: brief-step;
+}
+
+.brief-steps li {
+  position: relative;
+  counter-increment: brief-step;
+  padding-left: 3rem;
+  margin-bottom: 1.4rem;
+  font-size: 1.08rem;
+  line-height: 1.65;
+  color: rgba(233, 226, 208, 0.78);
+}
+
+.brief-steps li:last-child {
+  margin-bottom: 0;
+}
+
+.brief-steps li::before {
+  content: counter(brief-step, upper-roman);
+  position: absolute;
+  top: 0.05rem;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  border: 1px solid rgba(201, 162, 39, 0.45);
+  border-radius: 50%;
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--gold);
+}
+
+.brief-steps strong {
+  font-weight: 600;
+  color: var(--parchment);
+}
+
+/* Rules with an allow / deny tag on every line */
+.brief-rules {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.brief-rule {
+  display: grid;
+  grid-template-columns: 8.5rem minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+  padding: 1.4rem 0;
+  border-top: 1px solid rgba(201, 162, 39, 0.12);
+}
+
+.brief-rule:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.brief-rule:last-child {
+  padding-bottom: 0;
+}
+
+.rule-tag {
+  justify-self: start;
+  padding: 0.3rem 0.7rem;
+  border-radius: 0.4rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.rule-tag--deny {
+  border: 1px solid rgba(224, 122, 122, 0.45);
+  background: rgba(224, 122, 122, 0.1);
+  color: #e58d8d;
+}
+
+.rule-tag--allow {
+  border: 1px solid rgba(169, 211, 140, 0.4);
+  background: rgba(169, 211, 140, 0.1);
+  color: #a9d38c;
+}
+
+/* "The artwork is provided" aside */
+.brief-note {
+  margin-top: 1.75rem;
+  padding: 1.6rem 1.85rem;
+  border: 1px solid rgba(201, 162, 39, 0.2);
+  border-left: 3px solid var(--gold);
+  border-radius: 0.75rem;
+  background: rgba(201, 162, 39, 0.05);
+}
+
+.brief-note-title {
+  margin: 0 0 0.75rem;
+  font-family: 'Cinzel', serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* Checklist of what the factory page has to contain */
+.brief-checklist {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.75rem 1.5rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.brief-checklist li {
+  position: relative;
+  padding-left: 1.6rem;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: rgba(233, 226, 208, 0.75);
+}
+
+.brief-checklist li::before {
+  content: '\2726';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+}
+
+@media (max-width: 575.98px) {
+  .brief-hero {
+    padding: 2.5rem 1.25rem;
+  }
+
+  .brief-rule {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.7rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brief-hero::after {
+    animation: none;
+  }
+}
+
+/* ===================== Footer ===================== */
+.landing-footer {
+  padding: 2rem 1rem;
+  text-align: center;
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(233, 226, 208, 0.4);
+  border-top: 1px solid rgba(201, 162, 39, 0.12);
+}

@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <radialGradient id="crystalBg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#230a3b" stop-opacity="0.9"/>
+      <stop offset="65%" stop-color="#0e0319" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#0d0b0e" stop-opacity="1"/>
+    </radialGradient>
+    <linearGradient id="crystalGradCenter" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f72585"/>
+      <stop offset="35%" stop-color="#b5179e"/>
+      <stop offset="70%" stop-color="#7209b7"/>
+      <stop offset="100%" stop-color="#3a0ca3"/>
+    </linearGradient>
+    <linearGradient id="crystalGradLeft" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4cc9f0"/>
+      <stop offset="50%" stop-color="#4361ee"/>
+      <stop offset="100%" stop-color="#3f37c9"/>
+    </linearGradient>
+    <linearGradient id="crystalGradRight" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f72585"/>
+      <stop offset="60%" stop-color="#7209b7"/>
+      <stop offset="100%" stop-color="#240046"/>
+    </linearGradient>
+    <filter id="crystalGlow" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <rect width="500" height="500" rx="24" fill="url(#crystalBg)"/>
+
+  <!-- Alchemical Circle -->
+  <circle cx="250" cy="250" r="215" fill="none" stroke="#b5179e" stroke-opacity="0.25" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <circle cx="250" cy="250" r="195" fill="none" stroke="#c9a227" stroke-opacity="0.35" stroke-width="2"/>
+  <circle cx="250" cy="250" r="175" fill="none" stroke="#4cc9f0" stroke-opacity="0.2" stroke-width="1"/>
+
+  <!-- Star Prism Rays -->
+  <polygon points="250,60 384,172 384,328 250,440 116,328 116,172" fill="none" stroke="#b5179e" stroke-opacity="0.12" stroke-width="1.5"/>
+
+  <!-- Magical Glow Halo -->
+  <ellipse cx="250" cy="260" rx="90" ry="110" fill="#b5179e" fill-opacity="0.2" filter="url(#crystalGlow)"/>
+
+  <!-- Stone Base -->
+  <polygon points="170,360 210,340 290,340 330,360 310,385 190,385" fill="#2b2d42" stroke="#1c1d2b" stroke-width="2"/>
+  <polygon points="190,385 310,385 280,405 220,405" fill="#181925" stroke="#1c1d2b" stroke-width="1.5"/>
+
+  <!-- Crystal Left -->
+  <polygon points="180,350 160,250 190,190 220,240 210,350" fill="url(#crystalGradLeft)" stroke="#a6c8ff" stroke-width="1.5"/>
+  <polygon points="190,190 220,240 210,350" fill="#4361ee" fill-opacity="0.7"/>
+
+  <!-- Crystal Right -->
+  <polygon points="290,350 280,240 310,195 340,260 320,350" fill="url(#crystalGradRight)" stroke="#ff99c8" stroke-width="1.5"/>
+  <polygon points="280,240 310,195 340,260" fill="#f72585" fill-opacity="0.5"/>
+
+  <!-- Crystal Mini Left -->
+  <polygon points="150,360 135,300 155,270 170,310 165,360" fill="url(#crystalGradLeft)" stroke="#a6c8ff" stroke-width="1"/>
+  <!-- Crystal Mini Right -->
+  <polygon points="330,360 345,310 365,280 355,330 340,360" fill="url(#crystalGradRight)" stroke="#ff99c8" stroke-width="1"/>
+
+  <!-- Central Great Crystal Shard -->
+  <!-- Main Facet Front -->
+  <polygon points="250,110 210,190 220,350 280,350 290,190" fill="url(#crystalGradCenter)" stroke="#ffffff" stroke-opacity="0.6" stroke-width="2"/>
+  <!-- Top Pyramid Tip -->
+  <polygon points="250,110 210,190 250,180" fill="#ffffff" fill-opacity="0.5"/>
+  <polygon points="250,110 290,190 250,180" fill="#f72585" fill-opacity="0.7"/>
+  <!-- Front Left Facet -->
+  <polygon points="210,190 250,180 250,350 220,350" fill="#b5179e" fill-opacity="0.8"/>
+  <!-- Front Right Facet (Bright) -->
+  <polygon points="290,190 250,180 250,350 280,350" fill="#7209b7" fill-opacity="0.9"/>
+
+  <!-- Crystal Facet Edge Highlights -->
+  <line x1="250" y1="110" x2="250" y2="180" stroke="#ffffff" stroke-width="2.5" filter="url(#crystalGlow)"/>
+  <line x1="250" y1="180" x2="250" y2="350" stroke="#ffffff" stroke-opacity="0.7" stroke-width="1.5"/>
+  <line x1="250" y1="110" x2="210" y2="190" stroke="#ffffff" stroke-width="2"/>
+  <line x1="250" y1="110" x2="290" y2="190" stroke="#ffffff" stroke-width="2"/>
+
+  <!-- Sparkle Flares -->
+  <polygon points="250,100 253,108 261,110 253,112 250,120 247,112 239,110 247,108" fill="#ffffff" filter="url(#crystalGlow)"/>
+  <circle cx="250" cy="110" r="4" fill="#ffffff" filter="url(#crystalGlow)"/>
+
+  <!-- Resonance Rings / Light Waves -->
+  <circle cx="250" cy="220" r="45" fill="none" stroke="#4cc9f0" stroke-opacity="0.4" stroke-width="1.5"/>
+  <circle cx="250" cy="220" r="70" fill="none" stroke="#b5179e" stroke-opacity="0.25" stroke-width="1"/>
+
+  <!-- Floating Prismatic Dust -->
+  <circle cx="170" cy="150" r="3" fill="#4cc9f0" filter="url(#crystalGlow)"/>
+  <circle cx="330" cy="150" r="3.5" fill="#f72585" filter="url(#crystalGlow)"/>
+  <circle cx="350" cy="220" r="2.5" fill="#ffffff" filter="url(#crystalGlow)"/>
+  <circle cx="150" cy="230" r="2.5" fill="#7209b7" filter="url(#crystalGlow)"/>
+  <circle cx="280" cy="85" r="2" fill="#4cc9f0" filter="url(#crystalGlow)"/>
+
+  <!-- Label -->
+  <text x="250" y="445" font-family="'Cinzel', serif" font-size="16" letter-spacing="4" fill="#b5179e" text-anchor="middle" font-weight="600">CRYSTAL SHARD</text>
+  <text x="250" y="465" font-family="'Cinzel', serif" font-size="10" letter-spacing="3" fill="rgba(233, 226, 208, 0.55)" text-anchor="middle">LIGHT &amp; MEMORY</text>
+</svg>

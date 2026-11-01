@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <radialGradient id="voidBg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#140026" stop-opacity="0.95"/>
+      <stop offset="65%" stop-color="#05000a" stop-opacity="0.98"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="1"/>
+    </radialGradient>
+    <radialGradient id="singularityGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="1"/>
+      <stop offset="35%" stop-color="#10002b" stop-opacity="1"/>
+      <stop offset="65%" stop-color="#7209b7" stop-opacity="0.8"/>
+      <stop offset="85%" stop-color="#4cc9f0" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#f72585" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="goldOrrery" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e6c554"/>
+      <stop offset="50%" stop-color="#c9a227"/>
+      <stop offset="100%" stop-color="#664f0b"/>
+    </linearGradient>
+    <filter id="voidFilter" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <rect width="500" height="500" rx="24" fill="url(#voidBg)"/>
+
+  <!-- Alchemical Void Circle -->
+  <circle cx="250" cy="250" r="215" fill="none" stroke="#7209b7" stroke-opacity="0.3" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <circle cx="250" cy="250" r="195" fill="none" stroke="#c9a227" stroke-opacity="0.4" stroke-width="2"/>
+  <circle cx="250" cy="250" r="175" fill="none" stroke="#4cc9f0" stroke-opacity="0.25" stroke-width="1"/>
+
+  <!-- Cosmic Gravitational Distortion Rings -->
+  <ellipse cx="250" cy="250" rx="140" ry="40" fill="none" stroke="#4cc9f0" stroke-opacity="0.35" stroke-width="2" transform="rotate(-25, 250, 250)" filter="url(#voidFilter)"/>
+  <ellipse cx="250" cy="250" rx="140" ry="40" fill="none" stroke="#f72585" stroke-opacity="0.35" stroke-width="2" transform="rotate(35, 250, 250)" filter="url(#voidFilter)"/>
+
+  <!-- Outer Orrery Rings (Containment Sphere) -->
+  <circle cx="250" cy="250" r="120" fill="none" stroke="url(#goldOrrery)" stroke-width="3"/>
+  <ellipse cx="250" cy="250" rx="120" ry="45" fill="none" stroke="url(#goldOrrery)" stroke-width="2.5" transform="rotate(60, 250, 250)"/>
+  <ellipse cx="250" cy="250" rx="120" ry="45" fill="none" stroke="url(#goldOrrery)" stroke-width="2.5" transform="rotate(-60, 250, 250)"/>
+
+  <!-- Runic nodes on orrery -->
+  <circle cx="250" cy="130" r="6" fill="#e6c554" stroke="#4cc9f0" stroke-width="1.5"/>
+  <circle cx="250" cy="370" r="6" fill="#e6c554" stroke="#4cc9f0" stroke-width="1.5"/>
+  <circle cx="130" cy="250" r="6" fill="#e6c554" stroke="#f72585" stroke-width="1.5"/>
+  <circle cx="370" cy="250" r="6" fill="#e6c554" stroke="#f72585" stroke-width="1.5"/>
+
+  <!-- Event Horizon Accretion Disk Glow -->
+  <ellipse cx="250" cy="250" rx="90" ry="90" fill="url(#singularityGlow)" filter="url(#voidFilter)"/>
+
+  <!-- Black Hole Singularity Core -->
+  <circle cx="250" cy="250" r="48" fill="#000000" stroke="#f72585" stroke-width="2.5" filter="url(#voidFilter)"/>
+  <circle cx="250" cy="250" r="45" fill="#000000"/>
+
+  <!-- Void Arcane Tendrils (Spiraling in) -->
+  <path d="M250,165 Q295,190 280,240 Q270,270 250,250" stroke="#4cc9f0" stroke-width="2.5" fill="none" stroke-linecap="round" filter="url(#voidFilter)"/>
+  <path d="M250,335 Q205,310 220,260 Q230,230 250,250" stroke="#f72585" stroke-width="2.5" fill="none" stroke-linecap="round" filter="url(#voidFilter)"/>
+
+  <!-- Pure Pure Black Core -->
+  <circle cx="250" cy="250" r="32" fill="#000000"/>
+  <circle cx="250" cy="250" r="33" fill="none" stroke="#ffffff" stroke-opacity="0.8" stroke-width="1" filter="url(#voidFilter)"/>
+
+  <!-- Trapped Cosmic Stardust -->
+  <circle cx="235" cy="240" r="1.5" fill="#ffffff"/>
+  <circle cx="260" cy="255" r="1.5" fill="#ffffff"/>
+  <circle cx="250" cy="235" r="2" fill="#4cc9f0"/>
+  <circle cx="255" cy="265" r="2" fill="#f72585"/>
+
+  <!-- Space Particles / Energy Bolts -->
+  <circle cx="160" cy="180" r="2.5" fill="#4cc9f0" filter="url(#voidFilter)"/>
+  <circle cx="340" cy="190" r="3" fill="#f72585" filter="url(#voidFilter)"/>
+  <circle cx="330" cy="320" r="2.5" fill="#7209b7" filter="url(#voidFilter)"/>
+  <circle cx="170" cy="330" r="3" fill="#ffffff" filter="url(#voidFilter)"/>
+  <circle cx="280" cy="110" r="2" fill="#e6c554" filter="url(#voidFilter)"/>
+
+  <!-- Label -->
+  <text x="250" y="445" font-family="'Cinzel', serif" font-size="16" letter-spacing="4" fill="#4cc9f0" text-anchor="middle" font-weight="600">DARK MATTER</text>
+  <text x="250" y="465" font-family="'Cinzel', serif" font-size="10" letter-spacing="3" fill="rgba(233, 226, 208, 0.55)" text-anchor="middle">THE VOID</text>
+</svg>

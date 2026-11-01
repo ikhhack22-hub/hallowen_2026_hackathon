@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <radialGradient id="phoenixBg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#381005" stop-opacity="0.9"/>
+      <stop offset="65%" stop-color="#190602" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#0d0b0e" stop-opacity="1"/>
+    </radialGradient>
+    <linearGradient id="featherGrad" x1="0%" y1="100%" x2="50%" y2="0%">
+      <stop offset="0%" stop-color="#6a040f"/>
+      <stop offset="25%" stop-color="#9d0208"/>
+      <stop offset="50%" stop-color="#d00000"/>
+      <stop offset="70%" stop-color="#e85d04"/>
+      <stop offset="90%" stop-color="#f48c06"/>
+      <stop offset="100%" stop-color="#faa307"/>
+    </linearGradient>
+    <linearGradient id="quillGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#ffba08"/>
+      <stop offset="50%" stop-color="#ffe394"/>
+      <stop offset="100%" stop-color="#ffffff"/>
+    </linearGradient>
+    <radialGradient id="fireAura" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff7b00" stop-opacity="0.5"/>
+      <stop offset="60%" stop-color="#d00000" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="flameGlow" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="7" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <rect width="500" height="500" rx="24" fill="url(#phoenixBg)"/>
+
+  <!-- Alchemical Circle -->
+  <circle cx="250" cy="250" r="215" fill="none" stroke="#f48c06" stroke-opacity="0.25" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <circle cx="250" cy="250" r="195" fill="none" stroke="#c9a227" stroke-opacity="0.35" stroke-width="2"/>
+  <circle cx="250" cy="250" r="175" fill="none" stroke="#dc2f02" stroke-opacity="0.2" stroke-width="1"/>
+
+  <!-- Solar Rays -->
+  <circle cx="250" cy="250" r="130" fill="url(#fireAura)"/>
+  
+  <!-- Feather Path -->
+  <!-- Left Vane -->
+  <path d="M220,380 C190,320 160,260 175,190 C185,150 215,110 250,85 C235,140 220,220 228,330 Z" fill="url(#featherGrad)" filter="url(#flameGlow)"/>
+  <!-- Right Vane -->
+  <path d="M220,380 C235,320 280,250 310,180 C325,140 310,105 250,85 C275,130 265,220 236,330 Z" fill="url(#featherGrad)" filter="url(#flameGlow)"/>
+
+  <!-- Delicate Barbs / Flames -->
+  <path d="M190,240 Q160,210 175,185 M180,280 Q150,255 170,230 M200,320 Q165,295 190,270" stroke="#ffba08" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M260,220 Q295,190 280,165 M250,265 Q290,235 270,210 M240,310 Q280,280 255,255" stroke="#ffba08" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Central Shaft (Rachis) -->
+  <path d="M210,405 Q225,320 238,220 Q246,145 250,85" stroke="url(#quillGrad)" stroke-width="4.5" fill="none" stroke-linecap="round" filter="url(#flameGlow)"/>
+
+  <!-- Calamus (Quill Base) -->
+  <line x1="205" y1="420" x2="212" y2="395" stroke="#ffe394" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Dancing Flame Tips -->
+  <path d="M250,85 Q245,60 255,45 Q262,65 250,85 Z" fill="#ffea00" filter="url(#flameGlow)"/>
+  <path d="M245,95 Q230,70 240,55 Q248,75 245,95 Z" fill="#ff7b00"/>
+  <path d="M255,95 Q270,70 260,55 Q252,75 255,95 Z" fill="#ff7b00"/>
+
+  <!-- Embers & Fire Sparks -->
+  <circle cx="160" cy="170" r="3" fill="#ffba08" filter="url(#flameGlow)"/>
+  <circle cx="310" cy="130" r="3.5" fill="#faa307" filter="url(#flameGlow)"/>
+  <circle cx="140" cy="230" r="2.5" fill="#ff3838" filter="url(#flameGlow)"/>
+  <circle cx="330" cy="210" r="4" fill="#ffea00" filter="url(#flameGlow)"/>
+  <circle cx="280" cy="80" r="2.5" fill="#ffffff" filter="url(#flameGlow)"/>
+  <circle cx="190" cy="110" r="3" fill="#ffba08" filter="url(#flameGlow)"/>
+  <circle cx="335" cy="290" r="2" fill="#e85d04" filter="url(#flameGlow)"/>
+
+  <!-- Label -->
+  <text x="250" y="445" font-family="'Cinzel', serif" font-size="16" letter-spacing="4" fill="#f48c06" text-anchor="middle" font-weight="600">PHOENIX FEATHER</text>
+  <text x="250" y="465" font-family="'Cinzel', serif" font-size="10" letter-spacing="3" fill="rgba(233, 226, 208, 0.55)" text-anchor="middle">FIRE &amp; REBIRTH</text>
+</svg>

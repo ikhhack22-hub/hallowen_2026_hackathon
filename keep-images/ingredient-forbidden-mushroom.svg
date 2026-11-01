@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <radialGradient id="shroomBg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1f0933" stop-opacity="0.9"/>
+      <stop offset="65%" stop-color="#0b0314" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#0d0b0e" stop-opacity="1"/>
+    </radialGradient>
+    <linearGradient id="capGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#c77dff"/>
+      <stop offset="35%" stop-color="#7b2cbf"/>
+      <stop offset="75%" stop-color="#3c096c"/>
+      <stop offset="100%" stop-color="#10002b"/>
+    </linearGradient>
+    <linearGradient id="stemGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#480ca8"/>
+      <stop offset="50%" stop-color="#b5179e"/>
+      <stop offset="100%" stop-color="#3a0ca3"/>
+    </linearGradient>
+    <filter id="sporeGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <rect width="500" height="500" rx="24" fill="url(#shroomBg)"/>
+
+  <!-- Alchemical Circle -->
+  <circle cx="250" cy="250" r="215" fill="none" stroke="#7b2cbf" stroke-opacity="0.25" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <circle cx="250" cy="250" r="195" fill="none" stroke="#c9a227" stroke-opacity="0.35" stroke-width="2"/>
+  <circle cx="250" cy="250" r="175" fill="none" stroke="#00f5d4" stroke-opacity="0.2" stroke-width="1"/>
+
+  <!-- Toxic Hexagram -->
+  <polygon points="250,65 395,335 105,335" fill="none" stroke="#7b2cbf" stroke-opacity="0.12" stroke-width="1.5"/>
+  <polygon points="250,435 395,165 105,165" fill="none" stroke="#7b2cbf" stroke-opacity="0.12" stroke-width="1.5"/>
+
+  <!-- Forest Moss Base -->
+  <ellipse cx="250" cy="385" rx="100" ry="25" fill="#1b4332" stroke="#2d6a4f" stroke-width="1.5"/>
+  <ellipse cx="250" cy="388" rx="85" ry="18" fill="#081c15"/>
+
+  <!-- Small Baby Mushroom Left -->
+  <path d="M185,385 C185,340 190,320 195,320 C200,320 205,340 205,385" fill="#3c096c" stroke="#5a189a" stroke-width="1.5"/>
+  <path d="M170,325 C170,295 220,295 220,325 Z" fill="#9d4edd" stroke="#00f5d4" stroke-width="1.5"/>
+  <circle cx="195" cy="308" r="3.5" fill="#00f5d4"/>
+
+  <!-- Main Mushroom Stem -->
+  <path d="M232,250 C230,300 220,350 215,385 C235,390 265,390 285,385 C280,350 270,300 268,250 Z" fill="url(#stemGrad)" stroke="#5a189a" stroke-width="2"/>
+
+  <!-- Stem Gills / Rings -->
+  <ellipse cx="250" cy="265" rx="24" ry="7" fill="none" stroke="#00f5d4" stroke-opacity="0.6" stroke-width="2" filter="url(#sporeGlow)"/>
+
+  <!-- Mushroom Cap Gills (Underneath) -->
+  <ellipse cx="250" cy="245" rx="110" ry="25" fill="#240046" stroke="#00f5d4" stroke-opacity="0.5" stroke-width="1.5"/>
+  <!-- Gill lines -->
+  <line x1="250" y1="245" x2="160" y2="245" stroke="#00f5d4" stroke-opacity="0.4" stroke-width="1.5"/>
+  <line x1="250" y1="245" x2="340" y2="245" stroke="#00f5d4" stroke-opacity="0.4" stroke-width="1.5"/>
+  <line x1="250" y1="245" x2="190" y2="235" stroke="#00f5d4" stroke-opacity="0.3" stroke-width="1.5"/>
+  <line x1="250" y1="245" x2="310" y2="235" stroke="#00f5d4" stroke-opacity="0.3" stroke-width="1.5"/>
+
+  <!-- Giant Witchcraft Mushroom Cap -->
+  <path d="M140,245 C140,130 180,95 250,95 C320,95 360,130 360,245 C310,260 190,260 140,245 Z" fill="url(#capGrad)" stroke="#c77dff" stroke-width="2.5"/>
+
+  <!-- Bioluminescent Turquoise Spots -->
+  <circle cx="250" cy="140" r="14" fill="#00f5d4" filter="url(#sporeGlow)"/>
+  <circle cx="210" cy="175" r="11" fill="#00f5d4" filter="url(#sporeGlow)"/>
+  <circle cx="295" cy="170" r="12" fill="#00f5d4" filter="url(#sporeGlow)"/>
+  <circle cx="170" cy="215" r="9" fill="#00f5d4" filter="url(#sporeGlow)"/>
+  <circle cx="330" cy="210" r="10" fill="#00f5d4" filter="url(#sporeGlow)"/>
+  <circle cx="255" cy="205" r="8" fill="#7bf1a8" filter="url(#sporeGlow)"/>
+
+  <!-- Inner spot glow cores -->
+  <circle cx="250" cy="140" r="6" fill="#ffffff"/>
+  <circle cx="210" cy="175" r="4.5" fill="#ffffff"/>
+  <circle cx="295" cy="170" r="5" fill="#ffffff"/>
+
+  <!-- Drifting Spores -->
+  <circle cx="220" cy="85" r="3.5" fill="#00f5d4" filter="url(#sporeGlow)"/>
+  <circle cx="270" cy="70" r="4" fill="#c77dff" filter="url(#sporeGlow)"/>
+  <circle cx="150" cy="130" r="3" fill="#7bf1a8" filter="url(#sporeGlow)"/>
+  <circle cx="350" cy="140" r="3" fill="#00f5d4" filter="url(#sporeGlow)"/>
+  <circle cx="130" cy="290" r="2.5" fill="#c77dff" filter="url(#sporeGlow)"/>
+  <circle cx="365" cy="295" r="3" fill="#00f5d4" filter="url(#sporeGlow)"/>
+
+  <!-- Label -->
+  <text x="250" y="445" font-family="'Cinzel', serif" font-size="16" letter-spacing="4" fill="#c77dff" text-anchor="middle" font-weight="600">FORBIDDEN MUSHROOM</text>
+  <text x="250" y="465" font-family="'Cinzel', serif" font-size="10" letter-spacing="3" fill="rgba(233, 226, 208, 0.55)" text-anchor="middle">POISON &amp; KNOWLEDGE</text>
+</svg>

@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3d0c11" stop-opacity="0.8"/>
+      <stop offset="70%" stop-color="#140608" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#0d0b0e" stop-opacity="1"/>
+    </radialGradient>
+    <radialGradient id="bloodGlow" cx="50%" cy="55%" r="45%">
+      <stop offset="0%" stop-color="#ff334b" stop-opacity="0.9"/>
+      <stop offset="40%" stop-color="#c9182b" stop-opacity="0.8"/>
+      <stop offset="85%" stop-color="#59050d" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#240105" stop-opacity="0.95"/>
+    </radialGradient>
+    <linearGradient id="goldTrim" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e6c554"/>
+      <stop offset="50%" stop-color="#c9a227"/>
+      <stop offset="100%" stop-color="#7a5d11"/>
+    </linearGradient>
+    <linearGradient id="glassShine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.4"/>
+      <stop offset="30%" stop-color="#ffffff" stop-opacity="0.1"/>
+      <stop offset="70%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.25"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="500" height="500" rx="24" fill="url(#bgGlow)"/>
+
+  <!-- Alchemical Circle -->
+  <circle cx="250" cy="250" r="215" fill="none" stroke="#c9a227" stroke-opacity="0.25" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <circle cx="250" cy="250" r="195" fill="none" stroke="#c9a227" stroke-opacity="0.4" stroke-width="2"/>
+  <circle cx="250" cy="250" r="180" fill="none" stroke="#ff334b" stroke-opacity="0.2" stroke-width="1"/>
+
+  <!-- Magic Runes / Symbols -->
+  <polygon points="250,70 405,340 95,340" fill="none" stroke="#c9a227" stroke-opacity="0.15" stroke-width="1.5"/>
+  <polygon points="250,430 405,160 95,160" fill="none" stroke="#c9a227" stroke-opacity="0.15" stroke-width="1.5"/>
+
+  <!-- Blood Aura -->
+  <circle cx="250" cy="275" r="90" fill="#ff2233" fill-opacity="0.18" filter="url(#glow)"/>
+
+  <!-- Vial Cap / Cork -->
+  <polygon points="230,130 270,130 264,155 236,155" fill="#8c6239" stroke="#5a3d1c" stroke-width="2"/>
+  <rect x="226" y="122" width="48" height="10" rx="3" fill="#a67c52" stroke="#5a3d1c" stroke-width="1.5"/>
+  <!-- Gold Neck Ring -->
+  <rect x="228" y="155" width="44" height="12" rx="2" fill="url(#goldTrim)" stroke="#4a370b" stroke-width="1.5"/>
+
+  <!-- Glass Vial Body -->
+  <path d="M236,167 C236,200 170,225 170,305 C170,360 205,395 250,395 C295,395 330,360 330,305 C330,225 264,167 264,167 Z" fill="#180407" fill-opacity="0.75" stroke="#e6c554" stroke-width="2.5"/>
+
+  <!-- Liquid Inside -->
+  <path d="M178,310 C178,255 236,230 236,230 C236,230 264,230 264,230 C264,230 322,255 322,310 C322,352 290,387 250,387 C210,387 178,352 178,310 Z" fill="url(#bloodGlow)"/>
+
+  <!-- Bubbles & Sparkles -->
+  <circle cx="235" cy="330" r="5" fill="#ffa4ad" fill-opacity="0.8"/>
+  <circle cx="265" cy="315" r="7" fill="#ff8290" fill-opacity="0.7"/>
+  <circle cx="250" cy="350" r="4" fill="#ffd1d6" fill-opacity="0.8"/>
+  <circle cx="220" cy="290" r="3" fill="#ffa4ad" fill-opacity="0.6"/>
+
+  <!-- Dragon Sigil on Flask -->
+  <path d="M245,285 Q250,270 258,285 Q265,295 258,310 Q250,320 242,310 Q235,295 245,285 Z" fill="none" stroke="#ffd175" stroke-width="2" stroke-opacity="0.7"/>
+  <line x1="250" y1="272" x2="250" y2="322" stroke="#ffd175" stroke-width="1.5" stroke-opacity="0.6"/>
+
+  <!-- Glass Reflection -->
+  <path d="M185,305 C185,250 238,225 240,185" fill="none" stroke="url(#glassShine)" stroke-width="8" stroke-linecap="round"/>
+  <ellipse cx="295" cy="340" rx="12" ry="25" fill="#ffffff" fill-opacity="0.15" transform="rotate(25, 295, 340)"/>
+
+  <!-- Embers / Floating Sparks -->
+  <circle cx="160" cy="210" r="2.5" fill="#ff6b7a" filter="url(#glow)"/>
+  <circle cx="340" cy="220" r="2" fill="#ffd175" filter="url(#glow)"/>
+  <circle cx="330" cy="170" r="3" fill="#ff4d6d" filter="url(#glow)"/>
+  <circle cx="170" cy="360" r="2" fill="#ff8595" filter="url(#glow)"/>
+  <circle cx="250" cy="100" r="3" fill="#ff4d6d" filter="url(#glow)"/>
+
+  <!-- Label Ring -->
+  <text x="250" y="445" font-family="'Cinzel', serif" font-size="16" letter-spacing="4" fill="#e6c554" text-anchor="middle" font-weight="600">DRAGON BLOOD</text>
+  <text x="250" y="465" font-family="'Cinzel', serif" font-size="10" letter-spacing="3" fill="rgba(233, 226, 208, 0.55)" text-anchor="middle">FIRE &amp; FURY</text>
+</svg>

@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <radialGradient id="moonBg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0a192f" stop-opacity="0.85"/>
+      <stop offset="65%" stop-color="#060c17" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#0d0b0e" stop-opacity="1"/>
+    </radialGradient>
+    <radialGradient id="dustGlow" cx="50%" cy="60%" r="45%">
+      <stop offset="0%" stop-color="#d0f4ff" stop-opacity="0.9"/>
+      <stop offset="40%" stop-color="#64dfdf" stop-opacity="0.7"/>
+      <stop offset="75%" stop-color="#1e5282" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#081b33" stop-opacity="0.95"/>
+    </radialGradient>
+    <linearGradient id="silverTrim" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="50%" stop-color="#b8c6db"/>
+      <stop offset="100%" stop-color="#6a7d9b"/>
+    </linearGradient>
+    <linearGradient id="glassShine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.45"/>
+      <stop offset="35%" stop-color="#ffffff" stop-opacity="0.1"/>
+      <stop offset="75%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.2"/>
+    </linearGradient>
+    <filter id="moonGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="9" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="500" height="500" rx="24" fill="url(#moonBg)"/>
+
+  <!-- Alchemical Circle -->
+  <circle cx="250" cy="250" r="215" fill="none" stroke="#64dfdf" stroke-opacity="0.25" stroke-width="1.5" stroke-dasharray="8,5"/>
+  <circle cx="250" cy="250" r="195" fill="none" stroke="#b8c6db" stroke-opacity="0.35" stroke-width="2"/>
+  <circle cx="250" cy="250" r="175" fill="none" stroke="#c9a227" stroke-opacity="0.2" stroke-width="1"/>
+
+  <!-- Moon Phasing Rings -->
+  <path d="M250,75 A175,175 0 0,0 250,425 A140,175 0 0,1 250,75 Z" fill="#64dfdf" fill-opacity="0.04"/>
+
+  <!-- Ethereal Moon Behind -->
+  <path d="M225,95 A55,55 0 0,0 280,185 A65,65 0 0,1 215,85 A50,50 0 0,0 225,95 Z" fill="#b8e7f5" fill-opacity="0.25" filter="url(#moonGlow)"/>
+
+  <!-- Vial Cap / Silver Stopper -->
+  <path d="M240,115 L260,115 L264,135 L236,135 Z" fill="#c4d5e8" stroke="#5b7496" stroke-width="1.5"/>
+  <circle cx="250" cy="110" r="8" fill="#e8f3ff" stroke="#6a7d9b" stroke-width="1.5"/>
+  <!-- Silver Neck Band -->
+  <rect x="228" y="140" width="44" height="12" rx="2" fill="url(#silverTrim)" stroke="#425570" stroke-width="1.5"/>
+
+  <!-- Moon Dust Flask Body -->
+  <path d="M236,152 C236,185 160,215 160,300 C160,365 200,400 250,400 C300,400 340,365 340,300 C340,215 264,152 264,152 Z" fill="#0c1e36" fill-opacity="0.75" stroke="#72efdd" stroke-width="2"/>
+
+  <!-- Swirling Glowing Dust -->
+  <path d="M168,305 C168,235 240,220 240,220 C240,220 260,220 260,220 C260,220 332,235 332,305 C332,360 295,392 250,392 C205,392 168,360 168,305 Z" fill="url(#dustGlow)"/>
+
+  <!-- Crescent Emblem -->
+  <path d="M242,270 A25,25 0 0,0 265,315 A28,28 0 0,1 235,265 A20,20 0 0,0 242,270 Z" fill="#ffffff" fill-opacity="0.8" filter="url(#moonGlow)"/>
+
+  <!-- Starry Stardust Particles -->
+  <circle cx="220" cy="320" r="4" fill="#ffffff" filter="url(#moonGlow)"/>
+  <circle cx="275" cy="340" r="3" fill="#ffffff" filter="url(#moonGlow)"/>
+  <circle cx="280" cy="285" r="4.5" fill="#80ffea" filter="url(#moonGlow)"/>
+  <circle cx="215" cy="270" r="3" fill="#a0e9ff" filter="url(#moonGlow)"/>
+  <circle cx="250" cy="360" r="5" fill="#ffffff" filter="url(#moonGlow)"/>
+  <circle cx="240" cy="245" r="2.5" fill="#e0f8ff" filter="url(#moonGlow)"/>
+
+  <!-- Glass Highlight -->
+  <path d="M176,300 C176,240 232,210 238,170" fill="none" stroke="url(#glassShine)" stroke-width="7" stroke-linecap="round"/>
+  <ellipse cx="310" cy="335" rx="10" ry="24" fill="#ffffff" fill-opacity="0.12" transform="rotate(22, 310, 335)"/>
+
+  <!-- Ambient Moon Sparkles -->
+  <circle cx="150" cy="190" r="2" fill="#64dfdf" filter="url(#moonGlow)"/>
+  <circle cx="355" cy="205" r="3" fill="#ffffff" filter="url(#moonGlow)"/>
+  <circle cx="165" cy="365" r="2.5" fill="#80ffea" filter="url(#moonGlow)"/>
+  <circle cx="335" cy="370" r="2" fill="#d0f4ff" filter="url(#moonGlow)"/>
+
+  <!-- Label -->
+  <text x="250" y="445" font-family="'Cinzel', serif" font-size="16" letter-spacing="4" fill="#64dfdf" text-anchor="middle" font-weight="600">MOON DUST</text>
+  <text x="250" y="465" font-family="'Cinzel', serif" font-size="10" letter-spacing="3" fill="rgba(233, 226, 208, 0.55)" text-anchor="middle">LUNAR &amp; SILVER</text>
+</svg>

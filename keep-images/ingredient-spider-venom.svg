@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <radialGradient id="spiderBg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#1e0a2b" stop-opacity="0.9"/>
+      <stop offset="65%" stop-color="#0e0414" stop-opacity="0.95"/>
+      <stop offset="100%" stop-color="#0d0b0e" stop-opacity="1"/>
+    </radialGradient>
+    <radialGradient id="venomGlow" cx="50%" cy="65%" r="45%">
+      <stop offset="0%" stop-color="#70e000" stop-opacity="0.9"/>
+      <stop offset="35%" stop-color="#38b000" stop-opacity="0.8"/>
+      <stop offset="70%" stop-color="#7209b7" stop-opacity="0.85"/>
+      <stop offset="100%" stop-color="#240046" stop-opacity="0.95"/>
+    </radialGradient>
+    <linearGradient id="purpleGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c9a227"/>
+      <stop offset="50%" stop-color="#9d4edd"/>
+      <stop offset="100%" stop-color="#5a189a"/>
+    </linearGradient>
+    <filter id="venomFilter" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <rect width="500" height="500" rx="24" fill="url(#spiderBg)"/>
+
+  <!-- Alchemical Circle -->
+  <circle cx="250" cy="250" r="215" fill="none" stroke="#9d4edd" stroke-opacity="0.25" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <circle cx="250" cy="250" r="195" fill="none" stroke="#c9a227" stroke-opacity="0.35" stroke-width="2"/>
+  <circle cx="250" cy="250" r="175" fill="none" stroke="#70e000" stroke-opacity="0.2" stroke-width="1"/>
+
+  <!-- Spiderweb background lines -->
+  <g stroke="#9d4edd" stroke-opacity="0.18" stroke-width="1" fill="none">
+    <line x1="250" y1="55" x2="250" y2="445"/>
+    <line x1="55" y1="250" x2="445" y2="250"/>
+    <line x1="110" y1="110" x2="390" y2="390"/>
+    <line x1="110" y1="390" x2="390" y2="110"/>
+    <!-- Web spirals -->
+    <path d="M250,180 Q290,195 300,225 Q320,270 300,300 Q270,320 250,320 Q200,320 190,290 Q180,250 200,220 Q220,190 250,180 Z"/>
+    <path d="M250,120 Q330,140 350,190 Q380,260 350,320 Q310,360 250,370 Q180,360 145,310 Q120,250 150,180 Q190,135 250,120 Z"/>
+  </g>
+
+  <!-- Venom Drop Hanging -->
+  <path d="M250,380 C240,405 240,415 250,425 C260,415 260,405 250,380 Z" fill="#70e000" filter="url(#venomFilter)"/>
+
+  <!-- Poison Ampoule Body (Tear-drop shaped) -->
+  <path d="M250,135 C235,175 180,220 180,300 C180,355 210,385 250,385 C290,385 320,355 320,300 C320,220 265,175 250,135 Z" fill="#150522" fill-opacity="0.8" stroke="#9d4edd" stroke-width="2"/>
+
+  <!-- Toxic Liquid Inside -->
+  <path d="M188,300 C188,235 240,205 250,170 C260,205 312,235 312,300 C312,348 285,378 250,378 C215,378 188,348 188,300 Z" fill="url(#venomGlow)"/>
+
+  <!-- Web filigree draped over vial -->
+  <path d="M195,260 Q250,290 305,260 M200,310 Q250,335 300,310 M215,350 Q250,365 285,350" stroke="#ffffff" stroke-opacity="0.25" stroke-width="1.2" fill="none"/>
+
+  <!-- Vial Cap / Spider Carving -->
+  <polygon points="238,105 262,105 255,135 245,135" fill="#3c096c" stroke="#c9a227" stroke-width="1.5"/>
+  <circle cx="250" cy="100" r="9" fill="#240046" stroke="#c9a227" stroke-width="1.5"/>
+  <!-- Mini Spider Icon on Cap -->
+  <ellipse cx="250" cy="100" rx="3.5" ry="5" fill="#70e000"/>
+
+  <!-- Venom Bubbles -->
+  <circle cx="240" cy="320" r="5" fill="#ccff33" fill-opacity="0.8"/>
+  <circle cx="265" cy="295" r="7" fill="#9ef01a" fill-opacity="0.7"/>
+  <circle cx="230" cy="270" r="4" fill="#70e000" fill-opacity="0.8"/>
+
+  <!-- Glass Highlight -->
+  <path d="M195,290 C195,235 242,205 246,160" fill="none" stroke="#ffffff" stroke-opacity="0.3" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Toxic Fumes / Spores -->
+  <circle cx="160" cy="220" r="2.5" fill="#70e000" filter="url(#venomFilter)"/>
+  <circle cx="340" cy="235" r="3" fill="#9d4edd" filter="url(#venomFilter)"/>
+  <circle cx="330" cy="330" r="2" fill="#70e000" filter="url(#venomFilter)"/>
+  <circle cx="170" cy="350" r="3" fill="#38b000" filter="url(#venomFilter)"/>
+
+  <!-- Label -->
+  <text x="250" y="445" font-family="'Cinzel', serif" font-size="16" letter-spacing="4" fill="#9d4edd" text-anchor="middle" font-weight="600">SPIDER VENOM</text>
+  <text x="250" y="465" font-family="'Cinzel', serif" font-size="10" letter-spacing="3" fill="rgba(233, 226, 208, 0.55)" text-anchor="middle">SHADOW &amp; PATIENCE</text>
+</svg>

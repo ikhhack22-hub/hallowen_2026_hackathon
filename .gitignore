@@ -1,0 +1,14 @@
+# Windows junk
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# macOS junk
+.DS_Store
+
+# Editor / tooling
+.vscode/
+.idea/
+
+# Local logs
+*.log
